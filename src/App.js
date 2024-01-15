@@ -12,7 +12,8 @@ function App() {
     expectedReturn: 6,
     duration: 10,
   });
-
+  
+  const userInputIsValid = userInput.duration>=1;
   function handeInput(identifier, newValue) {
     setInput((previous) => ({
       ...previous,
@@ -23,7 +24,7 @@ function App() {
     <>
     <Header/>
     <UserInput userInput={userInput} handeInput={handeInput}/>
-    <Result userInput={userInput}/>
+    {userInputIsValid?<Result userInput={userInput}/>:<p className='center'>Duration shoul be greater or equal to 1</p>}
     </>
   );
 }

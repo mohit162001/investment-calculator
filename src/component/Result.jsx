@@ -25,7 +25,7 @@ function Result({userInput}) {
                         <td>{formatter.format(yearData.interest)}</td>
                         <td>{formatter.format(totalIntrest)}</td>
                     </tr>
-                })}
+                })} 
             </tbody>
         </table>
     
