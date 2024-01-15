@@ -42,6 +42,7 @@ function UserInput({userInput,handeInput}) {
       <label>DURATION</label>
       <input
         type="number"
+        min='0'
         required
         value={userInput.duration}
         onChange={(event) => {
