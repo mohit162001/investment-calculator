@@ -17,15 +17,16 @@ body {
 
 #header {
   text-align: center;
-  margin: 3rem auto;
+  margin: 4rem auto;
 }
 
 
 #header img {
-  width: 5rem;
-  height: 5rem;
+  width: 6rem;
+  height: 6rem;
   object-fit: contain;
   background-color: transparent;
+  border-radius: 50%;
 }
 
 #header h1 {
