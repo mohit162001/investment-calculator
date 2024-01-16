@@ -19,7 +19,7 @@ function Result({userInput}) {
         
                 {newResult.map((yearData)=>{
                     const totalIntrest = yearData.valueEndOfYear - yearData.annualInvestment * yearData.year -initalInvestment
-                    return <tr key={yearData.year}>
+                        return <tr key={yearData.year}>
                         <td>{yearData.year}</td>
                         <td>{formatter.format(yearData.valueEndOfYear)}</td>
                         <td>{formatter.format(yearData.interest)}</td>
