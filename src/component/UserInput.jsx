@@ -1,7 +1,7 @@
 import React from "react";
 
-function UserInput({userInput,handeInput}) {
-  
+function UserInput({userInput,handeInput,calculate}) {
+
 
   return (
     <section id="user-input">
@@ -11,7 +11,7 @@ function UserInput({userInput,handeInput}) {
       <input
         type="number"
         required
-        value={userInput.initalInvestment}
+        value={userInput.initialInvestment}
         onChange={(event) => {
           handeInput("initialInvestment", event.target.value);
         }}
@@ -51,6 +51,9 @@ function UserInput({userInput,handeInput}) {
       />
       </p>
       </div>
+      <span >
+      <button className="cal-btn" onClick={calculate} >Calculate</button>
+      </span>
       {console.log(userInput)}
     </section>
   );

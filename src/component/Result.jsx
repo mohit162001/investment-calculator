@@ -1,9 +1,13 @@
 import React from 'react'
 import { calculateInvestmentResults, formatter } from '../utility/investment_calculation'
-function Result({userInput}) {
-    const newResult = calculateInvestmentResults(userInput);
-    const initalInvestment = newResult[0].valueEndOfYear - newResult[0].interest - newResult[0].annualInvestment
+function Result({result}) {
+    if(result.initialInvestment && result.annualInvestment && result.expectedReturn && result.duration >0){
+        var newResult = calculateInvestmentResults(result);
+    console.log('first',newResult)
+    console.log('result',result)
+    var initalInvestment = newResult[0].valueEndOfYear - newResult[0].interest - newResult[0].annualInvestment
     console.log(newResult);
+    }
   return (
     <div>
         <table id='result'>
@@ -17,7 +21,7 @@ function Result({userInput}) {
             </thead>
             <tbody>
         
-                {newResult.map((yearData)=>{
+                {newResult && newResult.map((yearData)=>{
                     const totalIntrest = yearData.valueEndOfYear - yearData.annualInvestment * yearData.year -initalInvestment
                         return <tr key={yearData.year}>
                         <td>{yearData.year}</td>

@@ -7,13 +7,20 @@ import Result from './component/Result';
 
 function App() {
   const [userInput, setInput] = useState({
-    initialInvestment: 111,
-    annualInvestment: 1200,
-    expectedReturn: 6,
-    duration: 10,
+    initialInvestment: undefined,
+    annualInvestment: undefined,
+    expectedReturn: undefined,
+    duration: '',
   });
+
+  const [result,setResult] = useState(userInput);
+
+
+  function calculate(){
+    setResult(userInput);
+  }
   
-  const userInputIsValid = userInput.duration>=1;
+  const userInputIsValid = userInput.duration>=1 && userInput.initialInvestment!==undefined;
 
 
   function handeInput(identifier, newValue) {
@@ -25,8 +32,9 @@ function App() {
   return (
     <>
     <Header/>
-    <UserInput userInput={userInput} handeInput={handeInput}/>
-    {userInputIsValid?<Result userInput={userInput}/>:<p className='center'>Duration should be greater or equal to 1</p>}
+    <UserInput userInput={userInput} handeInput={handeInput} calculate={calculate}/>
+    
+    {userInputIsValid?<Result result={result}/>:<p className='center'>Duration should be greater or equal to 1</p>}
     </>
   );
 }
