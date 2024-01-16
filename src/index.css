@@ -65,7 +65,21 @@ body {
   color: #c2e9e0;
   font-size: 1rem;
 }
+.cal-btn{
+  padding: 0.5rem;
+  background: transparent;
+  border-radius: 5px;
+  color: #e1eeeb;
+  border: 1px solid rgba(255, 255, 255, 0.637);
+  cursor: pointer;
+}
 
+.cal-btn:hover{
+  color: #153f2e;
+  background: #478069;
+  transition: 0.5s;
+  
+}
 #result {
   max-width: 50rem;
   margin: 2rem auto;
